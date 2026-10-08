@@ -1,0 +1,15 @@
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\bin\Debug\net10.0\ExerciciosPOO.exe
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\bin\Debug\net10.0\ExerciciosPOO.deps.json
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\bin\Debug\net10.0\ExerciciosPOO.runtimeconfig.json
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\bin\Debug\net10.0\ExerciciosPOO.dll
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\bin\Debug\net10.0\ExerciciosPOO.pdb
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\ExerciciosPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\ExerciciosPOO.AssemblyInfoInputs.cache
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\ExerciciosPOO.AssemblyInfo.cs
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\ExerciciosPOO.csproj.CoreCompileInputs.cache
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\ExerciciosPOO.dll
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\refint\ExerciciosPOO.dll
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\ExerciciosPOO.pdb
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\ExerciciosPOO.genruntimeconfig.cache
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\ref\ExerciciosPOO.dll
+C:\Users\45420054884\source\repos\FundamentosDaPOO\ExerciciosPOO\obj\Debug\net10.0\Exercici.9B3DC531.Up2Date

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Xml;
-
-namespace ExerciciosPOO
+﻿namespace ExerciciosPOO.ClassesEObjetos
 {
     public class Aluno
     {
@@ -28,7 +22,7 @@ namespace ExerciciosPOO
             **Dica:** com construtor, o objeto já nasce preenchido: `Aluno a = new Aluno("Carlos", 8, 7)
          */
 
-        public string Nome;        
+        public string Nome;
         public double Nota1, Nota2;
         public double Media;
 
@@ -62,8 +56,8 @@ namespace ExerciciosPOO
 
         public void ExibirSituacao()
         {
-        CalcularMedia();
-        EstaAprovado();
+            CalcularMedia();
+            EstaAprovado();
         }
     }
 }

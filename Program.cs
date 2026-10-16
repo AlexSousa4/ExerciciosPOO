@@ -22,7 +22,11 @@ Olá, meu nome é Bruno e tenho 31 anos.
 
 using ExerciciosPOO.ClassesEMetodos;
 using ExerciciosPOO.ClassesEObjetos;
-using System.Net.Http.Headers;
+using ExerciciosPOO.Encapsulamento;
+using ExerciciosPOO.ExerciciosEmSala;
+using ExerciciosPOO.Herança.Animal;
+using ExerciciosPOO.Herança.FuncionarioGerente;
+using ExerciciosPOO.Herança.Veiculos;
 
 Pessoa pessoa1 = new Pessoa();
 
@@ -111,18 +115,18 @@ contaBancaria1.ExibirSaldo();
 
         Crie a classe `Aluno` com:
 
-        - Atributos: `Nome`, `Nota1` e `Nota2`.
-        - Um **construtor** que recebe nome e as duas notas.
-        - Método `CalcularMedia()`, que retorna a média das notas.
-        - Método `EstaAprovado()`, que retorna `true` se a média for 7 ou mais.
-        - Método `ExibirSituacao()`, que usa os dois métodos acima.
+- Atributos: `Nome`, `Nota1` e `Nota2`.
+- Um **construtor** que recebe nome e as duas notas.
+- Método `CalcularMedia()`, que retorna a média das notas.
+- Método `EstaAprovado()`, que retorna `true` se a média for 7 ou mais.
+- Método `ExibirSituacao()`, que usa os dois métodos acima.
      */
 
 
-Aluno aluno1 = new Aluno("Carlos", 8, 7);
+ExerciciosPOO.ClassesEObjetos.Aluno aluno1 = new ExerciciosPOO.ClassesEObjetos.Aluno("Carlos", 8, 7);
 aluno1.ExibirSituacao();
 
-Aluno aluno2 = new Aluno("Bia", 5, 5);
+ExerciciosPOO.ClassesEObjetos.Aluno aluno2 = new ExerciciosPOO.ClassesEObjetos.Aluno("Bia", 5, 5);
 aluno2.ExibirSituacao();
 
 
@@ -173,11 +177,28 @@ Jogo wolverine = new Jogo("Wolverine", "Playstation", 400.00);
 Jogo zelda = new Jogo("Zelda Ocarina Of Time Remake", "Nintendo Switch", 480.00);
 Jogo fifa = new Jogo("Fifa", "Xbox", 700.00);
 
+
 arrayJogos[0] = godOfWar;
 arrayJogos[1] = liesOfP;
 arrayJogos[2] = wolverine;
 arrayJogos[3] = zelda;
 arrayJogos[4] = fifa;
+
+
+//LAÇO FOR PARA PREEMCHER AS INFORMAÇÕES MANUALMENTE
+//for (int i = 0; i < arrayJogos.Length; i++)
+//{
+//    Console.WriteLine("Digite o nome do jogo");
+//    string nome = Console.ReadLine();
+//    Console.WriteLine("Digite a plataforma do jogo");
+//    string plataforma = Console.ReadLine();
+//    Console.WriteLine("Digite o valor do jogo");
+//    double valorJogo = double.Parse(Console.ReadLine());
+
+//    arrayJogos[i] = new Jogo(nome, plataforma, valorJogo);
+//}
+
+
 
 double JogoMaisCaro = arrayJogos[0].Preco;
 string NomeJogoMaisCaro = arrayJogos[0].Nome;
@@ -203,13 +224,12 @@ Console.WriteLine($"Jogo mais caro é: {NomeJogoMaisCaro} R$ {JogoMaisCaro}");
 //FUNDAMENTAL
 
 /*
-      * ### 👋 Exercício 1: Saudação
-     Crie a classe `Pessoa` com o atributo `Nome` e os métodos abaixo.
-
-     Cumprimentar()	void	Mostra: Olá, eu sou {Nome}!
-     CumprimentarAlguem(string outraPessoa)	void	Mostra: Olá, {outraPessoa}! Eu sou {Nome}.
-     ObterApresentacao()	string	Retorna o texto: Meu nome é {Nome}. (não mostra na tela)
-      */
+* ### 👋 Exercício 1: Saudação
+Crie a classe `Pessoa` com o atributo `Nome` e os métodos abaixo.
+Cumprimentar()	void	Mostra: Olá, eu sou {Nome}!
+CumprimentarAlguem(string outraPessoa)	void	Mostra: Olá, {outraPessoa}! Eu sou {Nome}.
+ObterApresentacao()	string	Retorna o texto: Meu nome é {Nome}. (não mostra na tela)
+*/
 
 Saudacao alex = new Saudacao
 {
@@ -276,3 +296,156 @@ Crie a classe `Cofrinho` com:
 - Um **construtor** que recebe só o `Dono`.
  */
 
+
+Cofrinho cofre = new Cofrinho("Alex");
+
+cofre.Guardar(50);
+cofre.Guardar(-10);
+cofre.Guardar(30);
+
+if (cofre.Retirar(100))
+    Console.WriteLine("Retirada feita!");
+else
+    Console.WriteLine("Saldo insuficiente.");
+
+if (cofre.Retirar(20))
+    Console.WriteLine("Retirada feita!");
+else
+    Console.WriteLine("Saldo insuficiente.");
+
+Console.WriteLine($"Saldo: R$ {cofre.Saldo:F2}");
+Console.WriteLine($"Faltam R$ {cofre.FaltaParaMeta(200):F2} para a meta.");
+
+
+
+
+
+//EXERCICIOS EM SALA DE AULA
+
+//EXERCICIO 1 LIVRO
+
+ExercicioEmSalaLivro HarryPotter = new("O Prisoneiro de Askaban", "JK Rowling", 350);
+
+HarryPotter.Exibir();
+
+
+//ENCAPSULAMENTO
+
+/*
+ * ### Exercício 1: Contador de Visitas
+
+Crie a classe `ContadorDeVisitas` com:
+
+- Campo `private int visitas` (ninguém de fora pode mexer).
+- Método público `RegistrarVisita()`: soma 1 às visitas.
+- Método público `ObterTotal()`: **retorna** o total de visitas.
+ */
+
+ContadorDeVisitas contador = new ContadorDeVisitas();
+
+contador.RegistrarVisitas();
+contador.RegistrarVisitas();
+contador.RegistrarVisitas();
+
+Console.WriteLine($"Total de visitas: {contador.ObterTotal()}");
+
+
+
+
+/*
+ * ### Exercício 2: Boletim
+
+Crie a classe `Boletim` com:
+
+- Propriedade pública `Aluno`: `public string Aluno { get; set; }`
+- Campo `private double nota`.
+- Método público `DefinirNota(double valor)`: só aceita notas de 0 a 10. Fora disso, mostra "Nota inválida: {valor}" e não altera a nota.
+- Método público `ObterNota()`: **retorna** a nota.
+ */
+
+Boletim boletim = new Boletim();
+boletim.Aluno = "Alex";
+
+boletim.DefinirNota(8.5);
+boletim.DefinirNota(15);
+
+Console.WriteLine($"{boletim.Aluno}: nota {boletim.ObterNota()}");
+
+
+/*
+ * ### Exercício 3: Usuário
+
+Crie a classe `Usuario` com:
+
+- Propriedade pública `Login`.
+- Campo `private string senha`.
+- Um **construtor** que recebe login e senha.
+- Método público `ConferirSenha(string tentativa)`: **retorna** `true` se a tentativa for igual à senha.
+- Método público `TrocarSenha(string senhaAtual, string novaSenha)`: só troca se a senha atual estiver correta. Mostra "Senha alterada!" ou "Senha atual incorreta.".
+ */
+
+Usuario usuario = new Usuario("ana123", "segredo");
+
+Console.WriteLine(usuario.ConferirSenha("1234"));
+Console.WriteLine(usuario.ConferirSenha("segredo"));
+
+usuario.TrocarSenha("errada", "novaSenha");
+usuario.TrocarSenha("segredo", "novaSenha");
+
+Console.WriteLine(usuario.ConferirSenha("novaSenha"));
+
+
+/*
+ * ### Exercício 1: Animal e Cachorro
+
+Crie as classes:
+
+- `Animal` (classe pai): propriedade `Nome` e método `Comer()`, que mostra "{Nome} está comendo.".
+- `Cachorro` (classe filha de `Animal`): método `Latir()`, que mostra "{Nome}: Au au!".
+
+O `Cachorro` **não** deve declarar `Nome` nem `Comer()`: ele herda do `Animal`.
+ */
+
+
+Cachorro Laila = new Cachorro();
+Laila.NomeAnimal = "Laila";
+
+Laila.Comer();
+Laila.Latir();
+
+
+/*
+* ### Exercício 2: Funcionário e Gerente
+
+Crie as classes:
+
+- `Funcionario` (classe pai): propriedades `Nome` e `Salario`, e um **construtor** que recebe as duas.
+- `Gerente` (filha de `Funcionario`): propriedade `Bonus`, construtor que recebe nome, salário e bônus, e o método `SalarioComBonus()`, que **retorna** Salario + Bonus.
+*/
+
+
+Funcionario Alex = new Funcionario("Alex", 3000);
+Gerente Isadora = new Gerente("Isadora", 5000, 1500);
+
+Console.WriteLine($"{Alex.NomeFuncionario}: R$ {Alex.Salario:F2}");
+Console.WriteLine($"{Isadora.NomeFuncionario}: R$ {Isadora.Salario:F2} + bônus = R$ {Isadora.SalarioComBonus():F2}");
+
+
+/*
+ * ### xercício 3: Veículo, Carro e Moto
+
+Crie as classes:
+
+- `Veiculo` (classe pai): propriedades `Marca` e `Modelo`, um **construtor** que recebe as duas e o método `Exibir()`, que mostra "{Marca} {Modelo}".
+- `Carro` (filha de `Veiculo`): propriedade `Portas`, construtor que recebe marca, modelo e portas, e o método `ExibirPortas()`.
+- `Moto` (filha de `Veiculo`): propriedade `Cilindradas`, construtor que recebe marca, modelo e cilindradas, e o método `ExibirCilindradas()`.
+ */
+
+Carro carro = new Carro("Fiat", "Uno", 4);
+Moto moto = new Moto("Honda", "CG 160", 160);
+
+carro.Exibir();
+carro.ExibirPortas();
+
+moto.Exibir();
+moto.ExibirCilindradas();

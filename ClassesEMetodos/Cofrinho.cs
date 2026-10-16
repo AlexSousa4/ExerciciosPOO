@@ -18,21 +18,49 @@ namespace ExerciciosPOO.ClassesEMetodos
         FaltaParaMeta(double meta)	double	Retorna quanto falta para chegar na meta. Se já chegou, retorna 0.
 
          */
-
         public string Dono;
         public double Saldo;
 
-        public void Guardar(double Valor)
+        public Cofrinho(string dono)
         {
-            if (Valor <= 0)
+            Dono = dono;
+        }
+
+
+        public void Guardar(double valor)
+        {
+            if (valor <= 0)
             {
-                Console.WriteLine("Valor inválido");
+                Console.WriteLine("Valor inválido.");
             }
             else
             {
-                Saldo += Valor;
-                Console.WriteLine($"Guardou R$ {Saldo}");
+                Saldo = Saldo + valor;
+                Console.WriteLine($"Guardou R$ {valor:F2}.");
             }
+        }
+
+        public bool Retirar(double valor)
+        {
+            if (valor > Saldo)
+            {
+                return false;
+            }
+
+            Saldo = Saldo - valor;
+            return true;
+        }
+
+        public double FaltaParaMeta(double meta)
+        {
+            if (Saldo >= meta)
+            {
+                return 0;
+            }
+
+            return meta - Saldo;
         }
     }
 }
+
+

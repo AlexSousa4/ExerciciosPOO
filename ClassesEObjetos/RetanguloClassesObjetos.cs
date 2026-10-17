@@ -1,6 +1,6 @@
 ﻿namespace ExerciciosPOO.ClassesEObjetos
 {
-    public class Retangulo
+    public class RetanguloClassesObjetos
     {
         //### 📐 Exercício 2: Retângulo
 

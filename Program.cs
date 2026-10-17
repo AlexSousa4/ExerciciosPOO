@@ -20,6 +20,8 @@ Olá, meu nome é Bruno e tenho 31 anos.
 
  */
 
+using ExerciciosPOO.Abstracao.Formas;
+using ExerciciosPOO.Abstracao.FormasPagamento;
 using ExerciciosPOO.ClassesEMetodos;
 using ExerciciosPOO.ClassesEObjetos;
 using ExerciciosPOO.Encapsulamento;
@@ -27,6 +29,8 @@ using ExerciciosPOO.ExerciciosEmSala;
 using ExerciciosPOO.Herança.Animal;
 using ExerciciosPOO.Herança.FuncionarioGerente;
 using ExerciciosPOO.Herança.Veiculos;
+using ExerciciosPOO.Polimorfismo;
+using ExerciciosPOO.Polimorfismo.InstrumentoEViolao;
 
 Pessoa pessoa1 = new Pessoa();
 
@@ -57,7 +61,7 @@ Os métodos não devem usar `Console.WriteLine`: quem mostra o resultado é o `P
 */
 
 
-Retangulo retangulo1 = new Retangulo();
+RetanguloClassesObjetos retangulo1 = new RetanguloClassesObjetos();
 
 Console.WriteLine(retangulo1.CalcularArea(5, 3));
 Console.WriteLine(retangulo1.CalcularPerimetro(5, 3));
@@ -231,10 +235,7 @@ CumprimentarAlguem(string outraPessoa)	void	Mostra: Olá, {outraPessoa}! Eu sou 
 ObterApresentacao()	string	Retorna o texto: Meu nome é {Nome}. (não mostra na tela)
 */
 
-Saudacao alex = new Saudacao
-{
-    Nome = "Alex"
-};
+SaudacaoClassesMetodos alex = new SaudacaoClassesMetodos("Alex");
 
 alex.Cumprimentar();
 
@@ -432,7 +433,7 @@ Console.WriteLine($"{Isadora.NomeFuncionario}: R$ {Isadora.Salario:F2} + bônus 
 
 
 /*
- * ### xercício 3: Veículo, Carro e Moto
+ * ### Exercício 3: Veículo, Carro e Moto
 
 Crie as classes:
 
@@ -449,3 +450,89 @@ carro.ExibirPortas();
 
 moto.Exibir();
 moto.ExibirCilindradas();
+
+
+//POLIMORFISMO
+
+/*
+* ### Exercício 1: Saudação
+Crie a classe `Saudacao` com **três versões** do método `Cumprimentar`:
+
+- `Cumprimentar()`: mostra "Olá!".
+- `Cumprimentar(string nome)`: mostra "Olá, {nome}!".
+- `Cumprimentar(string nome, int idade)`: mostra "Olá, {nome}! Você tem {idade} anos.".
+*/
+
+
+Saudacao s = new Saudacao();
+
+s.CumprimentarSaudacao();
+s.CumprimentarSaudacao("Alex");
+s.CumprimentarSaudacao("Isadora", 21);
+
+
+/*
+* ### Exercício 2: Calculadora de Área
+
+Crie a classe `CalculadoraDeArea` com duas versões do método `CalcularArea`:
+- `CalcularArea(double lado)`: **retorna** a área do quadrado (lado × lado).
+- `CalcularArea(double largura, double altura)`: **retorna** a área do retângulo (largura × altura).
+*/
+
+CalculadoraDeArea calc = new CalculadoraDeArea();
+
+Console.WriteLine($"Quadrado: {calc.CalcularArea(4)}");
+Console.WriteLine($"Retângulo: {calc.CalcularArea(3, 5)}");
+
+
+/*
+ * ### Exercício 3: Instrumento e Violão (sobrescrita)
+
+Crie as classes:
+
+- `Instrumento` (classe pai): método `virtual` `Tocar()`, que mostra "Tocando um instrumento...".
+- `Violao` (filha de `Instrumento`): **sobrescreve** `Tocar()` para mostrar "Violão: plim plim".
+ */
+
+Instrumento instrumento = new Instrumento();
+Violao violao = new Violao();
+
+instrumento.Tocar();
+violao.Tocar();
+
+
+//ABSTRACAO
+
+/*
+ * ### Exercício 1: Formas de Pagamento
+
+Crie:
+
+- A interface `IPagamento` com o método `void Pagar(double valor);`
+- A classe `Pix`, que implementa `IPagamento` e mostra "Pagamento de R$ {valor} via Pix.".
+- A classe `Cartao`, que implementa `IPagamento` e mostra "Pagamento de R$ {valor} no cartão.".
+ */
+
+Pix pix = new Pix();
+Cartao cartao = new Cartao();
+
+pix.Pagar(50);
+cartao.Pagar(120);
+
+
+
+/*
+ * ### Exercício 2: Formas
+
+Crie:
+
+- A interface `IForma` com o método `double CalcularArea();`
+- A classe `Quadrado`, que implementa `IForma`: propriedade `Lado`, um **construtor** que recebe o lado e `CalcularArea()` **retornando** Lado × Lado.
+- A classe `Retangulo`, que implementa `IForma`: propriedades `Largura` e `Altura`, um **construtor** que recebe as duas e `CalcularArea()` **retornando** Largura × Altura.
+ */
+
+Quadrado quadrado = new Quadrado(4);
+Retangulo retangulo = new Retangulo(3, 5);
+
+Console.WriteLine($"Quadrado: {quadrado.CalcularArea()}");
+Console.WriteLine($"Retângulo: {retangulo.CalcularArea()}");

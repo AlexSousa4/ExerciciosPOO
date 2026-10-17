@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ExerciciosPOO.ClassesEMetodos
 {
-    public class Saudacao
+    public class SaudacaoClassesMetodos
     {
         /*
          * ### 👋 Exercício 1: Saudação
@@ -17,12 +17,17 @@ namespace ExerciciosPOO.ClassesEMetodos
 
         public string Nome;
 
+        public SaudacaoClassesMetodos(string nome)
+        {
+            Nome = nome;
+        }
+
         public void Cumprimentar()
         {
             Console.WriteLine($"Olá, eu sou {Nome}");
         }
 
-        public void CumprimentarAlguem(string outraPessoa)
+       public void CumprimentarAlguem(string outraPessoa)
         {
             Console.WriteLine($"Olá {outraPessoa}! Eu sou {Nome}");
         }

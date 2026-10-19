@@ -22,6 +22,7 @@ Olá, meu nome é Bruno e tenho 31 anos.
 
 using ExerciciosPOO.Abstracao.Formas;
 using ExerciciosPOO.Abstracao.FormasPagamento;
+using ExerciciosPOO.Abstracao.PatoPeixe;
 using ExerciciosPOO.ClassesEMetodos;
 using ExerciciosPOO.ClassesEObjetos;
 using ExerciciosPOO.Encapsulamento;
@@ -536,3 +537,22 @@ Retangulo retangulo = new Retangulo(3, 5);
 
 Console.WriteLine($"Quadrado: {quadrado.CalcularArea()}");
 Console.WriteLine($"Retângulo: {retangulo.CalcularArea()}");
+
+
+/*
+ * ### Exercício 3: Pato e Peixe (duas interfaces)
+
+Crie:
+
+- A interface `IVoador` com o método `void Voar();`
+- A interface `INadador` com o método `void Nadar();`
+- A classe `Pato`, que implementa **as duas** interfaces.
+- A classe `Peixe`, que implementa só `INadador`.
+ */
+
+Pato pato = new Pato();
+Peixe peixe = new Peixe();
+
+pato.Voar();
+pato.Nadar();
+peixe.Nadar();
